@@ -11,20 +11,20 @@ Usage
 
 Copy the seo4ajax.py file in your project root.
 
-Set the S4A_TOKEN environment variable with the SEO4Ajax token of your site.
+Set the `S4A_TOKEN` environment variable with the SEO4Ajax token of your site.
 
-Add the middleware in the MIDDLEWARE list in settings.py, e.g. 
+Add the middleware in the `MIDDLEWARE` list in settings.py, e.g. 
 
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'project.seo4ajax.Middleware'
-]
+    MIDDLEWARE = [
+      'django.middleware.security.SecurityMiddleware',
+      'django.contrib.sessions.middleware.SessionMiddleware',
+      'django.middleware.common.CommonMiddleware',
+      'django.middleware.csrf.CsrfViewMiddleware',
+      'django.contrib.auth.middleware.AuthenticationMiddleware',
+      'django.contrib.messages.middleware.MessageMiddleware',
+      'django.middleware.clickjacking.XFrameOptionsMiddleware',
+      'project.seo4ajax.Middleware'
+    ]
 
 How it works
 ------------
