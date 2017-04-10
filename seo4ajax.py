@@ -19,7 +19,7 @@ class Middleware(object):
             return self.get_response(request)
 
         if "_escaped_fragment_" in request.GET:
-            return self.__serve(request)
+            return self.__serveCapture(request)
 
         if re.match(r"(googlebot/|googlebot-mobile|yandexbot|pinterest.*ios|mail\.ru|seznambot|screaming)", request.META['HTTP_USER_AGENT'], re.I) is not None:
             return self.get_response(request)
@@ -28,11 +28,11 @@ class Middleware(object):
             return self.get_response(request)
 
         if re.match(r"(bot|spider|pinterest|crawler|archiver|flipboardproxy|mediapartners|facebookexternalhit|quora|whatsapp)", request.META['HTTP_USER_AGENT'], re.I) is not None:
-            return self.__serve(request)
+            return self.__serveCapture(request)
 
         return self.get_response(request)
 
-    def __serve(self, request):
+    def __serveCapture(self, request):
 
         headers = request.META
         if headers.get("X_FORWARDED_FOR"):
