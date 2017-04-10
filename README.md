@@ -9,9 +9,9 @@ proxify GET requests from non-js clients (e.g. crawlers) to [SEO4Ajax](https://w
 Usage
 -----
 
-Copy the seo4ajax.py file in your project root.
+Copy the `seo4ajax.py` file in your project root.
 
-Add the middleware in the `MIDDLEWARE` list in settings.py, e.g. 
+Add the middleware in the `MIDDLEWARE` list in `settings.py`, e.g. 
 
     MIDDLEWARE = [
       'django.middleware.security.SecurityMiddleware',
@@ -29,8 +29,8 @@ Set the `S4A_TOKEN` environment variable with the SEO4Ajax token of your site.
 How it works
 ------------
 
-This middleware checks the presence of the _escaped_fragment_ query parameter or the presence of a user-agent string identifying bots that do not support the Ajax Crawling Specification.
-If the _escaped_fragment_ is present or a bot is detected, it requests the snapshot on SEO4Ajax and responds to the initial request with the concerned snapshot.
+This middleware checks the presence of the `_escaped_fragment_` query parameter or the presence of a user-agent string identifying bots that do not support the Ajax Crawling Specification.
+If the `_escaped_fragment_` is present or a bot is detected, it requests the snapshot on SEO4Ajax and responds to the initial request with the concerned snapshot.
 
 
 Requirements
