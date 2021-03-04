@@ -3,8 +3,7 @@ Django-s4a
 
 [SEO4Ajax](https://www.seo4ajax.com) is a service that let you get full visibility on search engines, social networks and display advertising of any AJAX website based on Angular, React, Backbone, Ember, jQuery etc.
 
-django-s4a is a middleware for Django. It provides an easy way to
-proxify GET requests from non-js clients (e.g. crawlers) to [SEO4Ajax](https://www.seo4ajax.com).
+django-s4a is a middleware for Django. It provides an easy way to proxy GET requests from non-js clients (e.g. crawlers) to [SEO4Ajax](https://www.seo4ajax.com).
 
 Usage
 -----
@@ -29,8 +28,7 @@ Set the `S4A_TOKEN` environment variable with the SEO4Ajax token of your site.
 How it works
 ------------
 
-This middleware checks the presence of the `_escaped_fragment_` query parameter or the presence of a user-agent string identifying bots that do not support the Ajax Crawling Specification.
-If the `_escaped_fragment_` is present or a bot is detected, it requests the snapshot on SEO4Ajax and responds to the initial request with the concerned snapshot.
+This middleware checks the presence of a user-agent string identifying bots. If the user-agent is detected as a bot, it requests the snapshot on SEO4Ajax and returns it to the bot.
 
 
 Requirements
