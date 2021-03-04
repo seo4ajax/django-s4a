@@ -18,16 +18,10 @@ class Middleware(object):
         if request.method != 'GET' and request.method != 'HEAD':
             return self.get_response(request)
 
-        if "_escaped_fragment_" in request.GET:
-            return self.__serveCapture(request)
-
-        if re.match(r"(googlebot/|googlebot-mobile|yandexbot|pinterest.*ios|mail\.ru|seznambot|screaming)", request.META['HTTP_USER_AGENT'], re.I) is not None:
-            return self.get_response(request)
-
         if re.match(r".*(\.[^?]{2,4}$|\.[^?]{2,4}?.*)", request.path) is not None:
             return self.get_response(request)
 
-        if re.match(r"(bot|spider|pinterest|crawler|archiver|flipboardproxy|mediapartners|facebookexternalhit|quora|whatsapp)", request.META['HTTP_USER_AGENT'], re.I) is not None:
+        if re.match(r"(google|bot|spider|pinterest|crawler|archiver|flipboardproxy|mediapartners|facebookexternalhit|insights|quora|whatsapp|slurp)", request.META['HTTP_USER_AGENT'], re.I) is not None:
             return self.__serveCapture(request)
 
         return self.get_response(request)
