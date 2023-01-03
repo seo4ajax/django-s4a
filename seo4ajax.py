@@ -21,7 +21,7 @@ class Middleware(object):
         if re.match(r".*(\.[^?]{2,4}$|\.[^?]{2,4}?.*)", request.path) is not None:
             return self.get_response(request)
 
-        if re.match(r"(google|bot|spider|pinterest|crawler|archiver|flipboardproxy|mediapartners|facebookexternalhit|insights|quora|whatsapp|slurp)", request.META['HTTP_USER_AGENT'], re.I) is not None:
+        if re.match(r"(google|bot|lighthouse|spider|pinterest|crawler|archiver|flipboardproxy|mediapartners|facebookexternalhit|insights|quora|whatsapp|slurp)", request.META['HTTP_USER_AGENT'], re.I) is not None:
             return self.__serveCapture(request)
 
         return self.get_response(request)
